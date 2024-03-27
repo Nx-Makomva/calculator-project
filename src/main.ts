@@ -1,24 +1,24 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+/*
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+The problem?
+Build a calculator using HTML, SCSS and JS / TS
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+NOTES:
+- Deployed website using github pages
+- Public github repo
+- Branches 
+- 15+ commits for the different stages of development
+- A README.md with short intro to project
+- Be responsive and built mobile-first + must work for different screen widths 
+
+
+Requirements:
+1. Can accept inputs
+2. Do some calculations and give correct output (returns stuff)
+3. Inputs come from user clicks on buttons (use button elements)
+
+What needs to happen?
+- Will need event handlers to do something after button clicks
+- Will need event listeners to look out for button clicks
+
+*/
