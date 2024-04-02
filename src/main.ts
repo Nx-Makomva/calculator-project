@@ -72,6 +72,7 @@ if (
 let currentNumber: string = "";
 let operatorPressed: string = "";
 let previousNumber: string = "";
+let additionCounter: number = 0;
 
 ////////////////////////// EVENT HANDLER -> NUMBERS CLICKED //////////////////////////////////////
 
@@ -148,7 +149,7 @@ const handleEqualsClick = () => {
     const previousNumberAsInteger = parseFloat(previousNumberAsText);
 
     if (displayFieldCurrent.innerText === '' && displayFieldPrevious.innerText === '') {
-      handleAllClearButton();
+      handleAllClearClick();
 
     } else if (operatorPressed === "÷") {
       if (currentNumberAsInteger !== 0) {
@@ -185,7 +186,7 @@ const handleEqualsClick = () => {
 equalsButton.addEventListener("click", handleEqualsClick);
 
 ////////////////////////// EVENT HANDLER -> AC CLICKED //////////////////////////////////////
-const handleAllClearButton = () => {
+const handleAllClearClick = () => {
   if (
     displayFieldPrevious.innerText !== null &&
     displayFieldCurrent.innerText !== null
@@ -195,10 +196,10 @@ const handleAllClearButton = () => {
   }
 };
 
-allClearButton.addEventListener("click", handleAllClearButton);
+allClearButton.addEventListener("click", handleAllClearClick);
 
 ////////////////////////// EVENT HANDLER -> DEL CLICKED //////////////////////////////////////
-const handleDeleteButton = () => {
+const handleDeleteClick = () => {
   if (displayFieldCurrent.innerText !== null) {
     currentNumber = displayFieldCurrent.innerText;
     let currentNumberBeingEdited = currentNumber.substring(
@@ -210,7 +211,7 @@ const handleDeleteButton = () => {
   }
 };
 
-deleteButton.addEventListener("click", handleDeleteButton);
+deleteButton.addEventListener("click", handleDeleteClick);
 
 ////////////////////////// EVENT HANDLER -> PERCENT CLICKED //////////////////////////////////////
 const handlePercentClick = () => {
@@ -241,4 +242,16 @@ percentButton.addEventListener('click', handlePercentClick);
 
 ////////////////////////// EVENT HANDLER -> PLUS BUTTON CLICKED //////////////////////////////////////
 
+const handleAddButtonClick = () => {
+  if (displayFieldPrevious !== null) {
+    const addAsInteger = parseFloat(previousNumber);
 
+    additionCounter += addAsInteger;
+    console.log(`I am counting up ` + additionCounter);
+    const result = additionCounter;
+    const resultAsString = result.toString();
+    displayFieldPrevious.innerHTML = resultAsString;
+    
+  }
+}
+addButton.addEventListener('click', handleAddButtonClick)
