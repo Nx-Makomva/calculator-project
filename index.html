@@ -4,36 +4,50 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>It All Adds Up</title>
+    <title>It All Adds Up- Calculator</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <script type="module" src="/src/main.ts"></script>
+    <main>
+      <h1>Welcome to "It All Adds Up" Calculator</h1>
+      <p>Instructions:</p>
+      <ul>
+        <li>Use the number buttons to input digits for calculation.</li>
+        <li>
+          Click on operators (+, -, *, /) to perform arithmetic operations.
+        </li>
+        <li>Press "=" to see the result of the calculation.</li>
+        <li>Click on "AC" to clear the current calculation.</li>
+        <li>Press "del" to delete the last digit entered.</li>
+        <li>Use "%" to calculate percentages.</li>
+      </ul>
 
-    <div class="calculator">
-      <div class="display">
-        <div class="display-previous"></div>
-        <div class="display-current"></div>
+      <div class="calculator">
+        <div class="display">
+          <div class="display-previous"></div>
+          <div class="display-current"></div>
+        </div>
+        <button class="all-clear">AC</button>
+        <button class="percent">%</button>
+        <button class="operator divide">÷</button>
+        <button class="number">7</button>
+        <button class="number">8</button>
+        <button class="number">9</button>
+        <button class="operator multiply">x</button>
+        <button class="number">4</button>
+        <button class="number">5</button>
+        <button class="number">6</button>
+        <button class="operator subtract">-</button>
+        <button class="number">1</button>
+        <button class="number">2</button>
+        <button class="number">3</button>
+        <button class="operator add">+</button>
+        <button class="number">0</button>
+        <button class="number">.</button>
+        <button class="delete">del</button>
+        <button class="equals">=</button>
       </div>
-      <button class="all-clear">AC</button>
-      <button class="percent">%</button>
-      <button class="operator divide">÷</button>
-      <button class="number">7</button>
-      <button class="number">8</button>
-      <button class="number">9</button>
-      <button class="operator multiply">x</button>
-      <button class="number">4</button>
-      <button class="number">5</button>
-      <button class="number">6</button>
-      <button class="operator subtract">-</button>
-      <button class="number">1</button>
-      <button class="number">2</button>
-      <button class="number">3</button>
-      <button class="operator add">+</button>
-      <button class="number">0</button>
-      <button class="number">.</button>
-      <button class="delete">del</button>
-      <button class="equals">=</button>
-    </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
