@@ -18,7 +18,7 @@ body {
 
 .container {
   text-align: center;
-  color: #fff;
+  color: #230101;
   max-width: 600px;
 }
 
@@ -43,12 +43,14 @@ ul li {
 }
 
 .calculator {
-  width: 355px;
+  width: 60%;
   display: grid;
-  grid-template-columns: repeat(4, 80px);
+  grid-template-columns: repeat(4, 25%);
   grid-template-rows: repeat(6, 80px);
   gap: 5px;
   padding: 10px;
+  padding-right: 25px;
+  margin: auto;
   border-radius: 10px;
   background-color: #333;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
