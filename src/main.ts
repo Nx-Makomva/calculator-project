@@ -73,6 +73,8 @@ let currentNumber: string = "";
 let operatorPressed: string = "";
 let previousNumber: string = "";
 let additionCounter: number = 0;
+let divisionCounter: number = 0;
+let multiplyCounter: number = 0;
 
 ////////////////////////// EVENT HANDLER -> NUMBERS CLICKED //////////////////////////////////////
 
@@ -240,7 +242,40 @@ if (operatorPressed === "-") {
 percentButton.addEventListener('click', handlePercentClick);
 
 
-////////////////////////// EVENT HANDLER -> PLUS BUTTON CLICKED //////////////////////////////////////
+
+////////////////////////// EVENT HANDLER -> DIVIDE BUTTON CLICKED //////////////////////////////////////
+
+const handleDivideButtonClick = () => {
+  if (displayFieldPrevious !== null) {
+    const addAsInteger = parseFloat(previousNumber);
+
+    divisionCounter += addAsInteger;
+    console.log(`I am dividing and conquering ` + divisionCounter);
+    const result = divisionCounter;
+    const resultAsString = result.toString();
+    displayFieldPrevious.innerHTML = resultAsString;
+    
+  }
+}
+divideButton.addEventListener('click', handleDivideButtonClick)
+
+////////////////////////// EVENT HANDLER -> MULTIPLY BUTTON CLICKED //////////////////////////////////////
+
+const handleMultiplyButtonClick = () => {
+  if (displayFieldPrevious !== null) {
+    const addAsInteger = parseFloat(previousNumber);
+
+    multiplyCounter += addAsInteger;
+    console.log(`I am multiplying like crazy ` + multiplyCounter);
+    const result = multiplyCounter;
+    const resultAsString = result.toString();
+    displayFieldPrevious.innerHTML = resultAsString;
+    
+  }
+}
+multiplyButton.addEventListener('click', handleMultiplyButtonClick)
+
+////////////////////////// EVENT HANDLER -> ADDITION BUTTON CLICKED //////////////////////////////////////
 
 const handleAddButtonClick = () => {
   if (displayFieldPrevious !== null) {
@@ -255,3 +290,4 @@ const handleAddButtonClick = () => {
   }
 }
 addButton.addEventListener('click', handleAddButtonClick)
+
