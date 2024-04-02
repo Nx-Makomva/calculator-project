@@ -49,7 +49,8 @@ button {
 .operator,
 .equals,
 .all-clear,
-.delete {
+.delete,
+.percent {
   grid-column: span 1;
   background-color: rgb(255, 191, 0, 0.85);
 

@@ -46,14 +46,16 @@ button {
 .operator,
 .equals,
 .all-clear,
-.delete {
+.delete,
+.percent {
   grid-column: span 1;
   background-color: rgba(255, 191, 0, 0.85);
 }
 .operator:hover,
 .equals:hover,
 .all-clear:hover,
-.delete:hover {
+.delete:hover,
+.percent:hover {
   background-color: rgba(255, 191, 0, 0.55);
 }
 
