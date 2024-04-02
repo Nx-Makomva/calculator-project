@@ -251,3 +251,33 @@ const handleEqualsClick = () => {
 
 equalsButton.addEventListener("click", handleEqualsClick);
 
+////////////////////////// EVENT HANDLER -> AC CLICKED //////////////////////////////////////
+const handleAllClearButton = () => {
+  if (
+    displayFieldPrevious.innerText !== null &&
+    displayFieldCurrent.innerText !== null
+  ) {
+    displayFieldCurrent.innerText = "";
+    displayFieldPrevious.innerText = "";
+  }
+};
+
+allClearButton.addEventListener("click", handleAllClearButton);
+
+////////////////////////// EVENT HANDLER -> DEL CLICKED //////////////////////////////////////
+const handleDeleteButton = () => {
+  if (displayFieldCurrent.innerText !== null) {
+    currentNumber = displayFieldCurrent.innerText;
+    let currentNumberBeingEdited = currentNumber.substring(
+      0,
+      currentNumber.length - 1
+    );
+    displayFieldCurrent.innerText = currentNumberBeingEdited;
+    console.log(currentNumberBeingEdited);
+  }
+};
+
+deleteButton.addEventListener("click", handleDeleteButton);
+
+////////////////////////// IF operator THEN new function//////////////////////////////////////
+
