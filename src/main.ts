@@ -132,3 +132,69 @@ if (
   throw new Error("Error with selectors");
 }
 
+////////////////////////// VARIABLES //////////////////////////////////////
+let currentNumber: string = "";
+let operatorPressed: string = "";
+let previousNumber: string = "";
+
+////////////////////////// EVENT HANDLER -> NUMBERS CLICKED //////////////////////////////////////
+
+const handleNumberClicked = (event: MouseEvent) => {
+  const numberText = (event.target as HTMLElement).innerText;
+
+  if (
+    numberText !== undefined &&
+    numberText !== null &&
+    displayFieldCurrent.innerText !== null &&
+    displayFieldPrevious.innerText !== null
+  ) {
+    let userInput = displayFieldCurrent.innerHTML;
+    displayFieldCurrent.innerHTML = numberText;
+    // Concatenate the new number text with the current content
+    userInput += numberText;
+    // Update the inner HTML of displayField with the concatenated content
+    displayFieldCurrent.innerHTML = userInput;
+
+    currentNumber = userInput;
+    console.log("i am " + currentNumber);
+  }
+};
+
+const numberClick = () => {
+  for (let i = 0; i < numberButtons.length; i++) {
+    const numberEvent = numberButtons[i];
+    numberEvent.addEventListener("click", handleNumberClicked);
+  }
+};
+numberClick();
+
+////////////////////////// EVENT HANDLER -> OPERATORS CLICKED //////////////////////////////////////
+
+const handleOperatorClicked = (event: MouseEvent) => {
+  const operatorText = (event.target as HTMLElement).innerText;
+  if (operatorText !== undefined && operatorText !== null) {
+    operatorPressed = operatorText;
+
+    if (displayFieldPrevious.innerText !== null) {
+      previousNumber = currentNumber;
+      displayFieldPrevious.innerText = previousNumber + " " + operatorPressed;
+
+      if (displayFieldCurrent.innerText !== null) {
+        displayFieldCurrent.innerText = "";
+        currentNumber = "";
+      }
+    }
+    console.log(`I am the current number -> ` + currentNumber);
+    console.log(`I am the previous number -> ` + previousNumber);
+  }
+};
+
+const operatorClick = () => {
+  for (let i = 0; i < operatorButtons.length; i++) {
+    const operator = operatorButtons[i];
+    operator.addEventListener("click", handleOperatorClicked);
+  }
+};
+
+operatorClick();
+
