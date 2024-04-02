@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* SCSS */
+body {
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #ebe5e5;
+}
+
+.container {
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+.calculator {
+  width: 355px;
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(6, 80px);
+  gap: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  font-size: 24px;
+  font-family: monospace;
+  background-color: #666;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.number {
+  grid-column: span 1;
+  background-color: rgb(114, 114, 114);
+}
+.number:hover {
+  background-color: rgba(114, 114, 114, 0.55);
+}
+
+.operator,
+.equals,
+.all-clear,
+.delete,
+.percent {
+  grid-column: span 1;
+  background-color: rgba(255, 191, 0, 0.85);
+}
+.operator:hover,
+.equals:hover,
+.all-clear:hover,
+.delete:hover,
+.percent:hover {
+  background-color: rgba(255, 191, 0, 0.55);
+}
+
+.all-clear {
+  grid-column: span 2;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.94);
+  grid-column: span 4;
+  font-size: 2rem;
+  text-align: right;
+}
+
+.display-previous {
+  background-color: rgba(201, 219, 203, 0.94);
+  height: 100%;
+  font-size: 1.5rem;
+  text-align: right;
+}
+
+.display-current {
+  background-color: rgba(201, 219, 203, 0.94);
+  font-size: 2rem;
+  text-align: right;
+}/*# sourceMappingURL=styles.css.map */
