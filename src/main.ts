@@ -198,3 +198,56 @@ const operatorClick = () => {
 
 operatorClick();
 
+////////////////////////// EVENT HANDLER -> EQUALS CLICKED //////////////////////////////////////
+
+const handleEqualsClick = () => {
+  if (
+    displayFieldPrevious.innerText !== null &&
+    displayFieldCurrent.innerText !== null
+  ) {
+    const currentNumberAsText = currentNumber;
+    const currentNumberAsInteger = parseFloat(currentNumberAsText);
+
+    const previousNumberAsText = previousNumber;
+    const previousNumberAsInteger = parseFloat(previousNumberAsText);
+
+    if (operatorPressed === "÷") {
+      if (currentNumberAsInteger !== 0) {
+        const result = previousNumberAsInteger / currentNumberAsInteger;
+        const resultAsString = result.toString();
+        displayFieldCurrent.innerText = resultAsString;
+        console.log(`I am the result of division ->` + result);
+        console.log(`inside the current display field is` + displayFieldCurrent.innerText);
+      }
+    } else if (operatorPressed === "x") {
+      const result = previousNumberAsInteger * currentNumberAsInteger;
+      const resultAsString = result.toString();
+      displayFieldCurrent.innerText = resultAsString;
+      console.log(`I am the result of multiplication ->` + result);
+    } else if (operatorPressed === "+") {
+      const result = previousNumberAsInteger + currentNumberAsInteger;
+      const resultAsString = result.toString();
+      displayFieldCurrent.innerText = resultAsString;
+      console.log(`I am the result of addition ->` + result);
+    } else if (operatorPressed === "-") {
+      const result = previousNumberAsInteger - currentNumberAsInteger;
+      const resultAsString = result.toString();
+      displayFieldCurrent.innerText = resultAsString;
+      console.log(`I am the result of subtraction ->` + result);
+
+      // } else if (operatorPressed === "%") {
+      //   const result = (previousDisplayTextAsInteger - currentDisplayTextAsInteger);
+      //   console.log(`I am the result of subtraction ->` + result);
+      // //
+    }
+    // console.log(`I am the previous display field ${displayFieldPrevious.innerText}`);
+    // console.log(`I am the operator pressed -> ${operatorPressed}`);
+    // console.log(`I am the current display input ${currentDisplayText}`);
+    // console.log(`I am the previous input ${previousDisplayTextAsInteger}`);
+
+    // displayFieldCurrent.innerText = '';
+  }
+};
+
+equalsButton.addEventListener("click", handleEqualsClick);
+
