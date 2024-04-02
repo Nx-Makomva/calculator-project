@@ -41,6 +41,14 @@ const allClearButton =
   document.querySelector<HTMLButtonElement>(".all-clear");
 const deleteButton = 
   document.querySelector<HTMLButtonElement>(".delete");
+const divideButton = 
+  document.querySelector<HTMLButtonElement>(".divide");
+const multiplyButton = 
+  document.querySelector<HTMLButtonElement>(".multiply");
+const addButton = 
+  document.querySelector<HTMLButtonElement>(".add");
+const subtractButton = 
+  document.querySelector<HTMLButtonElement>(".subtract");
 
 ////////////////////////// NULL EXCEPTIONS //////////////////////////////////////
 if (
@@ -48,6 +56,10 @@ if (
   !operatorButtons ||
   !displayFieldCurrent ||
   !displayFieldPrevious ||
+  !divideButton ||
+  !multiplyButton ||
+  !addButton ||
+  !subtractButton ||
   !percentButton ||
   !equalsButton ||
   !allClearButton ||
@@ -225,3 +237,8 @@ if (operatorPressed === "-") {
 }
 
 percentButton.addEventListener('click', handlePercentClick);
+
+
+////////////////////////// EVENT HANDLER -> PLUS BUTTON CLICKED //////////////////////////////////////
+
+
