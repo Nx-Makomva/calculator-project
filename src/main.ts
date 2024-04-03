@@ -302,13 +302,19 @@ const handleSubtractButtonClick = () => {
   if (displayFieldPrevious !== null) {
      const turnToInteger = parseFloat(previousNumber);
 
-    subtractionCounter = turnToInteger - subtractionCounter;
-    const result = subtractionCounter;
-     resultAsString = result.toString();
-    displayFieldPrevious.innerHTML = resultAsString;
-  } else {
-    console.error("Error with Subtract Button");
+     if (subtractionCounter === 0) {
+      subtractionCounter = turnToInteger;
+      } else { 
+        subtractionCounter -= turnToInteger;
+      }
+      
+      const result = subtractionCounter;
+      resultAsString = result.toString();
+      displayFieldPrevious.innerHTML = resultAsString;
+
+    } else {
+      console.error("Error with Subtract Button");
+    }
   }
-}
 
 subtractButton.addEventListener('click', handleSubtractButtonClick)
