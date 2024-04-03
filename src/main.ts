@@ -73,7 +73,6 @@ const handleNumberClicked = (event: MouseEvent) => {
     displayFieldCurrent.innerHTML = userInput;
 
     currentNumber = userInput;
-    console.log("i am " + currentNumber);
   } else {
     console.error("Unable to process number input")
   }
@@ -104,8 +103,6 @@ const handleOperatorClicked = (event: MouseEvent) => {
         currentNumber = "";
       }
     }
-    console.log(`I am the current number -> ` + currentNumber);
-    console.log(`I am the previous number -> ` + previousNumber);
   } else {
     console.error("Operator button click failed. Check operator button text is valid and the display fields are properly initialized.")
   }
@@ -125,8 +122,6 @@ operatorClick();
 ////////////////////////// EVENT HANDLER -> EQUALS CLICKED //////////////////////////////////////
 
 const handleEqualsClick = () => {
-  console.log('equals innerText 1.' + displayFieldPrevious.innerText);
-  console.log('equals current innerText 1.' + displayFieldCurrent.innerText);
   if (
     displayFieldPrevious.innerHTML !== null &&
     displayFieldCurrent.innerHTML !== null
@@ -145,35 +140,22 @@ const handleEqualsClick = () => {
           const result = previousNumberAsInteger / currentNumberAsInteger;
            resultAsString = result.toString();
           displayFieldCurrent.innerHTML = resultAsString;
-          console.log(`I am the result of division ->` + result);
-          console.log(`inside the current display field is` + displayFieldCurrent.innerHTML);
             }
           } else if (operatorPressed === "x") {
               const result = previousNumberAsInteger * currentNumberAsInteger;
                resultAsString = result.toString();
               displayFieldCurrent.innerHTML = resultAsString;
-              console.log(`I am the result of multiplication ->` + result);
-              
-              
           } else if (operatorPressed === "+") {
               const result = previousNumberAsInteger + currentNumberAsInteger;
                resultAsString = result.toString();
               displayFieldCurrent.innerHTML = resultAsString;
-              console.log(`I am the result of addition ->` + result);
           } else if (operatorPressed === "-") {
               const result = previousNumberAsInteger - currentNumberAsInteger;
                resultAsString = result.toString();
               displayFieldCurrent.innerHTML = resultAsString;
-              console.log(`I am the result of subtraction ->` + result);
           } else {
             console.error("Equals button click failed")
           }
-
-          console.log(`equals current number -> ` + currentNumber);
-          console.log(`equals previous number -> ` + previousNumber);
-          console.log('equals previous innerText 2.' + displayFieldPrevious.innerText);
-          console.log('equals current innerText 2.' + displayFieldCurrent.innerText);
-
         }
       };
 
@@ -208,7 +190,7 @@ const handleDeleteClick = () => {
       currentNumber.length - 1
     );
     displayFieldCurrent.innerHTML = currentNumberBeingEdited;
-    console.log(currentNumberBeingEdited);
+
   } else {
     console.error("Delete button click failed");
     
@@ -244,24 +226,29 @@ if (operatorPressed === "-") {
 percentButton.addEventListener('click', handlePercentClick);
 
 
-
 ////////////////////////// EVENT HANDLER -> DIVIDE BUTTON CLICKED //////////////////////////////////////
 
 const handleDivideButtonClick = () => {
   if (displayFieldPrevious !== null) {
     const turnToInteger = parseFloat(previousNumber);
+
     if (turnToInteger !== 0) {
-      divisionCounter /= turnToInteger;
+
+      divisionCounter = divisionCounter / turnToInteger;
       const result = divisionCounter;
        resultAsString = result.toString();
       displayFieldPrevious.innerHTML = resultAsString;
+
+    } else {
+      console.error('Error with Divide by 0');
+      
       }
     } else {
       console.error("Error with Divide Button");
-      
     }
   }
 divideButton.addEventListener('click', handleDivideButtonClick)
+
 
 ////////////////////////// EVENT HANDLER -> MULTIPLY BUTTON CLICKED //////////////////////////////////////
 
@@ -307,7 +294,7 @@ const handleSubtractButtonClick = () => {
       } else { 
         subtractionCounter -= turnToInteger;
       }
-      
+
       const result = subtractionCounter;
       resultAsString = result.toString();
       displayFieldPrevious.innerHTML = resultAsString;
