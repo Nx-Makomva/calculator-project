@@ -7,6 +7,7 @@ This project is a simple calculator application built using HTML, SCSS, and Type
 The calculator performs basic arithmetic operations such as addition, subtraction, multiplication, and division. 
 It also includes functionality for clearing the input, deleting the last digit, and calculating percentages.
 
+
 Features
 
 Accepts user input through button clicks
@@ -15,11 +16,13 @@ Supports addition, subtraction, multiplication, and division
 Includes functionality for clearing the input and deleting digits
 Calculates percentages
 
+
 Technologies Used
 
 * HTML
 * SCSS (Sass)
 * TypeScript
+
 
 Usage
 
