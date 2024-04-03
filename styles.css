@@ -57,21 +57,24 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.94);
   grid-column: span 4;
   font-size: 2rem;
   text-align: right;
 }
 .calculator .display--previous {
-  background-color: rgba(201, 219, 203, 0.94);
+  background-color: rgba(199, 232, 235, 0.94);
   height: 100%;
   font-size: 1.5rem;
   text-align: right;
+  border: none;
+  outline: none;
 }
 .calculator .display--current {
-  background-color: rgba(201, 219, 203, 0.94);
+  background-color: rgba(199, 232, 235, 0.94);
   font-size: 2rem;
   text-align: right;
+  border: none;
+  outline: none;
 }
 
 button {
