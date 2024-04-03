@@ -1,5 +1,6 @@
 
 
+
 ////////////////////////// QUERY SELECTORS //////////////////////////////////////
 const displayFieldPrevious =
   document.querySelector<HTMLDivElement>(".display--previous");
@@ -53,6 +54,7 @@ let subtractionCounter: number = 0;
 let divisionCounter: number = 1;
 let multiplyCounter: number = 1;
 
+
 ////////////////////////// EVENT HANDLER -> NUMBERS CLICKED //////////////////////////////////////
 
 const handleNumberClicked = (event: MouseEvent) => {
@@ -89,6 +91,7 @@ numberClick();
 ////////////////////////// EVENT HANDLER -> OPERATORS CLICKED //////////////////////////////////////
 
 const handleOperatorClicked = (event: MouseEvent) => {
+
   const operatorText = (event.target as HTMLElement).innerText;
   if (operatorText !== undefined && operatorText !== null) {
     operatorPressed = operatorText;
@@ -107,6 +110,8 @@ const handleOperatorClicked = (event: MouseEvent) => {
   } else {
     console.error("Operator button click failed. Check operator button text is valid and the display fields are properly initialized.")
   }
+
+
 };
 
 const operatorClick = () => {
@@ -121,6 +126,8 @@ operatorClick();
 ////////////////////////// EVENT HANDLER -> EQUALS CLICKED //////////////////////////////////////
 
 const handleEqualsClick = () => {
+  console.log('equals innerText 1.' + displayFieldPrevious.innerText);
+  console.log('equals current innerText 1.' + displayFieldCurrent.innerText);
   if (
     displayFieldPrevious.innerHTML !== null &&
     displayFieldCurrent.innerHTML !== null
@@ -147,6 +154,8 @@ const handleEqualsClick = () => {
               const resultAsString = result.toString();
               displayFieldCurrent.innerHTML = resultAsString;
               console.log(`I am the result of multiplication ->` + result);
+              
+              
           } else if (operatorPressed === "+") {
               const result = previousNumberAsInteger + currentNumberAsInteger;
               const resultAsString = result.toString();
@@ -157,10 +166,15 @@ const handleEqualsClick = () => {
               const resultAsString = result.toString();
               displayFieldCurrent.innerHTML = resultAsString;
               console.log(`I am the result of subtraction ->` + result);
-
           } else {
             console.error("Equals button click failed")
           }
+
+          console.log(`equals current number -> ` + currentNumber);
+          console.log(`equals previous number -> ` + previousNumber);
+          console.log('equals previous innerText 2.' + displayFieldPrevious.innerText);
+          console.log('equals current innerText 2.' + displayFieldCurrent.innerText);
+
         }
       };
 
@@ -241,7 +255,6 @@ const handleDivideButtonClick = () => {
     const turnToInteger = parseFloat(previousNumber);
     if (turnToInteger !== 0) {
       divisionCounter /= turnToInteger;
-      console.log(`I am dividing and conquering ` + divisionCounter);
       const result = divisionCounter;
       const resultAsString = result.toString();
       displayFieldPrevious.innerHTML = resultAsString;
@@ -260,13 +273,12 @@ const handleMultiplyButtonClick = () => {
     const turnToInteger = parseFloat(previousNumber);
 
     multiplyCounter *= turnToInteger;
-    console.log(`I am multiplying like crazy ` + multiplyCounter);
     const result = multiplyCounter;
     const resultAsString = result.toString();
     displayFieldPrevious.innerHTML = resultAsString;
 
   } else {
-      console.error("Error with Divide Button");
+      console.error("Error with Multiply Button");
   }
 }
 multiplyButton.addEventListener('click', handleMultiplyButtonClick)
@@ -278,7 +290,6 @@ const handleAddButtonClick = () => {
     const turnToInteger = parseFloat(previousNumber);
 
     additionCounter += turnToInteger;
-    console.log(`I am counting up ` + additionCounter);
     const result = additionCounter;
     const resultAsString = result.toString();
     displayFieldPrevious.innerHTML = resultAsString;
@@ -295,7 +306,6 @@ const handleSubtractButtonClick = () => {
     const turnToInteger = parseFloat(previousNumber);
 
     subtractionCounter = turnToInteger - subtractionCounter;
-    console.log(`I am taking things away ` + subtractionCounter);
     const result = subtractionCounter;
     const resultAsString = result.toString();
     displayFieldPrevious.innerHTML = resultAsString;
@@ -306,3 +316,11 @@ const handleSubtractButtonClick = () => {
 
 subtractButton.addEventListener('click', handleSubtractButtonClick)
 
+///////////////////////////////////////// TESTING ///////////////////////////////////////////////////
+
+// const openPreviousDisplay = () => {
+//   console.log(Event);
+  
+// }
+
+// displayFieldPrevious.addEventListener('click', openPreviousDisplay)
