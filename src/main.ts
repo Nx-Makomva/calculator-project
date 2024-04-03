@@ -2,9 +2,9 @@
 
 ////////////////////////// QUERY SELECTORS //////////////////////////////////////
 const displayFieldPrevious =
-  document.querySelector<HTMLDivElement>(".display-previous");
+  document.querySelector<HTMLDivElement>(".display--previous");
 const displayFieldCurrent =
-  document.querySelector<HTMLDivElement>(".display-current");
+  document.querySelector<HTMLDivElement>(".display--current");
 const numberButtons = 
   document.querySelectorAll<HTMLButtonElement>(".number");
 const operatorButtons =
