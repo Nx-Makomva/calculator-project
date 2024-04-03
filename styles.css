@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-/* SCSS */
 body {
   font-family: "Courier New", Courier, monospace;
   display: flex;
@@ -15,30 +14,29 @@ body {
   background-color: #ebe5e5;
 }
 
-.container {
+.intro--container {
   text-align: center;
   color: #230101;
   max-width: 600px;
 }
-
-h1 {
+.intro--container h1 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
-
-p {
-  font-size: 1.2rem;
+.intro--container p {
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
-
-ul {
+.intro--container ul {
   list-style-type: none;
   padding: 0;
   margin-bottom: 20px;
 }
-
-ul li {
+.intro--container ul li {
   margin-bottom: 10px;
+}
+.intro--container li {
+  font-size: 1.1rem;
 }
 
 .calculator {
@@ -54,6 +52,26 @@ ul li {
   border-radius: 10px;
   background-color: #333;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.calculator .display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.94);
+  grid-column: span 4;
+  font-size: 2rem;
+  text-align: right;
+}
+.calculator .display--previous {
+  background-color: rgba(201, 219, 203, 0.94);
+  height: 100%;
+  font-size: 1.5rem;
+  text-align: right;
+}
+.calculator .display--current {
+  background-color: rgba(201, 219, 203, 0.94);
+  font-size: 2rem;
+  text-align: right;
 }
 
 button {
@@ -92,27 +110,4 @@ button {
 
 .all-clear {
   grid-column: span 2;
-}
-
-.display {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: rgba(255, 255, 255, 0.94);
-  grid-column: span 4;
-  font-size: 2rem;
-  text-align: right;
-}
-
-.display-previous {
-  background-color: rgba(201, 219, 203, 0.94);
-  height: 100%;
-  font-size: 1.5rem;
-  text-align: right;
-}
-
-.display-current {
-  background-color: rgba(201, 219, 203, 0.94);
-  font-size: 2rem;
-  text-align: right;
 }/*# sourceMappingURL=styles.css.map */
